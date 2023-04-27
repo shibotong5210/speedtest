@@ -14,7 +14,8 @@
  * @date 2023-04-23
  * @return int
  */
-#define Set_Speed 25     // 设定速度值,超过该值报警,根据自己想法设置；这里设置25；速度挡位60以上响警报
+#define Set_Speed 25 // 设定速度值,超过该值报警,根据自己想法设置；这里设置25；速度挡位60以上响警报
+#define Set_Velcolity 250
 #define Set_Distance 500 // 设定距离值,超过该值报警
 #define Distance_2 400   // 设定距离值,超过该值报警
 #define Distance_3 300   // 设定距离值,超过该值报警
@@ -105,7 +106,8 @@ int main(void)
         Average_Speed = (uint32_t)(Speed_1 + Speed_2) / 2;
         // 距离判断
 
-        if (Average_Speed > Set_Speed)
+        //  if (Average_Speed > Set_Speed)
+        if (Velocity > Set_Velcolity)
         {
             // 蜂鸣器报警
             if (Distance_data < Set_Distance)
